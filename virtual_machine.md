@@ -105,15 +105,3 @@ Sanal makineler izole bir ortamda çalışır. Bir sanal makinede meydana gelen 
 ### **5. Yedekleme ve Felaket Kurtarma:**
 
 - Sanal makineler yedeklenebilir ve başka bir ana bilgisayara taşınarak çalıştırılabilir.
-
----
-
-## **Sanal Makinenin Alternatifleri**
-
-### **1. Container Teknolojileri (Örneğin, Docker):**
-
-- Daha hafif ve hızlıdır, ancak tam izolasyon sağlamaz. Sanal makineler, işletim sistemini tamamen izole ederken konteynerler, aynı işletim sistemi çekirdeğini paylaşır.
-
-### **2. Çıplak Donanım (Bare Metal):**
-
-- Uygulamalar doğrudan fiziksel donanım üzerinde çalıştırılır. Daha yüksek performans sağlar ancak esneklik ve taşınabilirlik azalır.
