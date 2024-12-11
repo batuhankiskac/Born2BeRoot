@@ -69,12 +69,6 @@
 
 ---
 
-## **APT ve Aptitude: Hangisini Kullanmalıyım?**
-- **Yeni Başlayanlar:** APT, basitliği nedeniyle genellikle daha uygundur.
-- **Deneyimli Kullanıcılar:** Aptitude, sunduğu esneklik ve detaylı raporlama özellikleri sayesinde daha karmaşık senaryolarda tercih edilebilir.
-
----
-
 ## **AppArmor Nedir?**
 **AppArmor**, Linux sistemlerinde zorunlu erişim kontrolü (Mandatory Access Control - MAC) sağlayan bir güvenlik modülüdür. Sistem yöneticilerinin, belirli uygulamaların sistem kaynaklarına erişimini kısıtlamasına olanak tanır. Bu, bir uygulamanın sadece izin verilen dosyalara, ağ bağlantılarına veya işlemlere erişmesini sağlar.
 
