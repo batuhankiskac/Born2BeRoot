@@ -1,6 +1,4 @@
-# Aptitude ve APT Arasındaki Farklar
-
-## **Genel Tanım**
+## **APT && Aptitude**
 - **APT (Advanced Package Tool):** Debian tabanlı Linux sistemlerinde kullanılan bir paket yönetim aracıdır. Paketlerin kurulumu, kaldırılması ve yönetimi için temel araçtır.
 - **Aptitude:** APT'nin sunduğu özelliklerin çoğunu barındıran, ancak ek özelliklere sahip bir paket yönetim aracıdır. Daha kullanıcı dostu bir arayüz sunar ve özellikle bağımlılık yönetiminde esnek çözümler sunar.
 
@@ -74,3 +72,62 @@
 ## **APT ve Aptitude: Hangisini Kullanmalıyım?**
 - **Yeni Başlayanlar:** APT, basitliği nedeniyle genellikle daha uygundur.
 - **Deneyimli Kullanıcılar:** Aptitude, sunduğu esneklik ve detaylı raporlama özellikleri sayesinde daha karmaşık senaryolarda tercih edilebilir.
+
+---
+
+## **AppArmor Nedir?**
+**AppArmor**, Linux sistemlerinde zorunlu erişim kontrolü (Mandatory Access Control - MAC) sağlayan bir güvenlik modülüdür. Sistem yöneticilerinin, belirli uygulamaların sistem kaynaklarına erişimini kısıtlamasına olanak tanır. Bu, bir uygulamanın sadece izin verilen dosyalara, ağ bağlantılarına veya işlemlere erişmesini sağlar.
+
+---
+
+### **AppArmor'ın Temel Özellikleri**
+1. **Profil Tabanlı Koruma:**
+   - Her uygulama için ayrı bir güvenlik profili oluşturulur.
+   - Bu profiller, uygulamaların hangi kaynaklara erişebileceğini belirler.
+
+2. **İki Çalışma Modu:**
+   - **Enforce (Zorlayıcı) Mod:**
+     - Profiller aktif olarak uygulanır ve izin verilmemiş eylemler engellenir.
+   - **Complain (Şikayet) Mod:**
+     - Uygulama kısıtlanmaz, ancak ihlaller kaydedilir.
+
+3. **Kolay Yönetim:**
+   - Profiller kolayca oluşturulabilir, düzenlenebilir ve devreye alınabilir.
+
+---
+
+### **AppArmor Nasıl Çalışır?**
+- Sistem, her uygulama için belirlenmiş bir profil yükler.
+- Uygulama, yalnızca profilinde belirtilen işlemleri gerçekleştirebilir.
+- Örneğin, bir web sunucusu yalnızca belirli dizinlere erişebilir ve ağ bağlantısı kurabilir.
+
+---
+
+### **AppArmor Kullanımı**
+1. **Profil Yönetimi:**
+   - Profilleri listelemek için:
+     ```bash
+     sudo aa-status
+     ```
+   - Bir uygulama için profil yüklemek:
+     ```bash
+     sudo aa-enforce /path/to/profile
+     ```
+
+2. **Yeni Profil Oluşturma:**
+   - Profil oluşturmak için AppArmor'un `aa-genprof` aracı kullanılabilir:
+     ```bash
+     sudo aa-genprof uygulama_adı
+     ```
+
+---
+
+### **AppArmor'ın Avantajları**
+1. **Ekstra Güvenlik Katmanı:**
+   - Uygulamaların yalnızca ihtiyaç duydukları kaynaklara erişmesini sağlar.
+
+2. **Kolay Yönetim:**
+   - Profillerin yönetimi basit ve esnektir.
+
+3. **Kapsamlı İzleme:**
+   - Complain modu sayesinde potansiyel sorunları tespit etme imkânı sunar.
