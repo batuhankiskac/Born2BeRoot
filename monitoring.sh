@@ -13,12 +13,10 @@ cpul=$(top -bn1 | grep '^%Cpu' | cut -c 9- | xargs | awk '{printf("%.1f%%"), $1 
 lb=$(who -b | awk '$1 == "system" {print $3 " " $4}')
 lvmt=$(lsblk -o TYPE | grep "lvm" | wc -l)
 lvmu=$(if [ $lvmt -eq 0 ]; then echo no; else echo yes; fi)
-# net-tools araclari gerekli:
 ctcp=$(cat /proc/net/tcp | wc -l | awk '{print $1-1}' | tr '' ' ')
 ulog=$(users | wc -w)
 ip=$(hostname -I)
 mac=$(ip link show | awk '$1 == "link/ether" {print $2}')
-# Journalctl calistirilabilir cunku komut dosyasi sudo cron'dan yurutulur.
 cmds=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
 wall " #Architecture: $arc
 #CPU physical: $pcpu
@@ -28,7 +26,7 @@ wall " #Architecture: $arc
 #CPU load: $cpul
 #Last boot: $lb
 #LVM use: $lvmu
-#Connexions TCP : $ctcp ESTABLISHED
+#Connections TCP : $ctcp ESTABLISHED
 #User log: $ulog
 #Network: IP $ip ($mac)
 #Sudo: $cmds cmd"
