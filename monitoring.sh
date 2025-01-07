@@ -26,7 +26,7 @@ wall " #Architecture: $arc
 #CPU load: $cpul
 #Last boot: $lb
 #LVM use: $lvmu
-#Connections TCP : $ctcp ESTABLISHED
+#Connexions TCP : $ctcp ESTABLISHED
 #User log: $ulog
 #Network: IP $ip ($mac)
 #Sudo: $cmds cmd"
